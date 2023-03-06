@@ -1,0 +1,7 @@
+{:source-paths ["src"]
+ :dev-http {3000 "public"}
+ :dependencies [[reagent "1.2.0"]]
+ :builds {:app {:target :browser
+                :output-dir "public/dist"
+                :asset-path "/dist/"
+                :modules {:core {:init-fn com.pojtinger.felicitas.cljs-kitchen-sink.core/main}}}}}
