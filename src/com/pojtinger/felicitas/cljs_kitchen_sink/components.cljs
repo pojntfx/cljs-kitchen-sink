@@ -6,7 +6,8 @@
   [:select {:value path
             :on-change #(set-path (keyword (-> % .-target .-value)))}
    [:option {:value :home} "Home"]
-   [:option {:value :variables} "Variables"]])
+   [:option {:value :variables} "Variables"]
+   [:option {:value :decisions} "Decisions"]])
 
 (defn index []
   (let [path (r/atom :home)]
@@ -19,4 +20,5 @@
              (case @path
                :home [pages/home]
                :variables [pages/variables]
+               :decisions [pages/decisions]
                [:h2 "404 Not Found"])]])))

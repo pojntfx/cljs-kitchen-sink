@@ -17,8 +17,26 @@
         local-initial-value "Local initial value"
         local-value (r/atom local-initial-value)]
     (fn []
-      [:section#globals
-       [:h2 "Global variables"]
-       (text-input-output-component "Global" global-value "global-value-input")
-       [:h2 "Local variables"]
-       (text-input-output-component "Local" local-value "local-value-input")])))
+      [:<>
+       [:section#globals
+        [:h2 "Global variables"]
+        (text-input-output-component "Global" global-value "global-value-input")]
+       [:section#locals
+        [:h2 "Local variables"]
+        (text-input-output-component "Local" local-value "local-value-input")]])))
+
+(defn decisions []
+  (let [enabled (r/atom false)
+        name (r/atom "Animal")]
+    (fn []
+      [:<>
+       [:section#booleans
+        [:h2 "Booleans"]
+        [:button
+         {:on-click #(swap! enabled not)}
+         (if @enabled "Disable" "Enable")]]
+       [:section#expressions
+        [:h2 "Expressions"]
+        [:button
+         {:on-click #(swap! name (fn [prev] [(if (= prev "Human") "Animal" "Human")]))}
+         (if (= @name "Human") "Disable" "Enable")]]])))
