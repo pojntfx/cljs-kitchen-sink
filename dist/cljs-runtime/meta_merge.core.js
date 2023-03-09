@@ -121,8 +121,8 @@ return null;
  * Recursively merge values based on the information in their metadata.
  */
 meta_merge.core.meta_merge = (function meta_merge$core$meta_merge(var_args){
-var G__10493 = arguments.length;
-switch (G__10493) {
+var G__9913 = arguments.length;
+switch (G__9913) {
 case 0:
 return meta_merge.core.meta_merge.cljs$core$IFn$_invoke$arity$0();
 
@@ -137,14 +137,14 @@ return meta_merge.core.meta_merge.cljs$core$IFn$_invoke$arity$2((arguments[(0)])
 break;
 default:
 var args_arr__5794__auto__ = [];
-var len__5769__auto___10495 = arguments.length;
-var i__5770__auto___10496 = (0);
+var len__5769__auto___9915 = arguments.length;
+var i__5770__auto___9916 = (0);
 while(true){
-if((i__5770__auto___10496 < len__5769__auto___10495)){
-args_arr__5794__auto__.push((arguments[i__5770__auto___10496]));
+if((i__5770__auto___9916 < len__5769__auto___9915)){
+args_arr__5794__auto__.push((arguments[i__5770__auto___9916]));
 
-var G__10497 = (i__5770__auto___10496 + (1));
-i__5770__auto___10496 = G__10497;
+var G__9917 = (i__5770__auto___9916 + (1));
+i__5770__auto___9916 = G__9917;
 continue;
 } else {
 }
@@ -201,13 +201,13 @@ return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3(meta_merge.core.meta_merge
 }));
 
 /** @this {Function} */
-(meta_merge.core.meta_merge.cljs$lang$applyTo = (function (seq10490){
-var G__10491 = cljs.core.first(seq10490);
-var seq10490__$1 = cljs.core.next(seq10490);
-var G__10492 = cljs.core.first(seq10490__$1);
-var seq10490__$2 = cljs.core.next(seq10490__$1);
+(meta_merge.core.meta_merge.cljs$lang$applyTo = (function (seq9910){
+var G__9911 = cljs.core.first(seq9910);
+var seq9910__$1 = cljs.core.next(seq9910);
+var G__9912 = cljs.core.first(seq9910__$1);
+var seq9910__$2 = cljs.core.next(seq9910__$1);
 var self__5754__auto__ = this;
-return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__10491,G__10492,seq10490__$2);
+return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__9911,G__9912,seq9910__$2);
 }));
 
 (meta_merge.core.meta_merge.cljs$lang$maxFixedArity = (2));

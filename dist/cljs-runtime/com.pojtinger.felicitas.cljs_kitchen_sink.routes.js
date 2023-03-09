@@ -23,7 +23,7 @@ return G__9543;
 })()
 ], null)));
 
-cljs.repl.source(com.pojtinger.felicitas.cljs_kitchen_sink.pages.home);
+cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2(["(defn home []\n  [:section#intro\n   [:p [:strong \"Welcome to the ClojureScript Kitchen Sink!\"]]\n   [:p \"Check out the source code (\u00A9 2023 AGPL-3.0 Felicitas Pojtinger): \" [:a {:href const/source-code :target \"_blank\"} \"GitHub\"]]])"], 0));
 
 (console = old_console__9535__auto___9542);
 
@@ -52,7 +52,7 @@ return G__9547;
 })()
 ], null)));
 
-cljs.repl.source(com.pojtinger.felicitas.cljs_kitchen_sink.pages.variables);
+cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2(["(defn variables []\n  (let [global-value (r/atom global-initial-value)\n        local-initial-value \"Local initial value\"\n        local-value (r/atom local-initial-value)]\n    (fn []\n      [:<>\n       [:section#globals\n        [:h2 \"Global variables\"]\n        (text-input-output-component \"Global\" global-value \"global-value-input\")]\n       [:section#locals\n        [:h2 \"Local variables\"]\n        (text-input-output-component \"Local\" local-value \"local-value-input\")]])))"], 0));
 
 (console = old_console__9535__auto___9546);
 
@@ -81,7 +81,7 @@ return G__9551;
 })()
 ], null)));
 
-cljs.repl.source(com.pojtinger.felicitas.cljs_kitchen_sink.pages.decisions);
+cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2(["(defn decisions []\n  (let [enabled (r/atom false)\n        name (r/atom \"Animal\")]\n    (fn []\n      [:<>\n       [:section#booleans\n        [:h2 \"Booleans\"]\n        [:button\n         {:on-click #(swap! enabled not)}\n         (if @enabled \"Disable\" \"Enable\")]]\n       [:section#expressions\n        [:h2 \"Expressions\"]\n        [:button\n         {:on-click #(swap! name (fn [prev] (if (= prev \"Human\") \"Animal\" \"Human\")))}\n         (if (= @name \"Human\") \"Disable\" \"Enable\")]]])))"], 0));
 
 (console = old_console__9535__auto___9550);
 
