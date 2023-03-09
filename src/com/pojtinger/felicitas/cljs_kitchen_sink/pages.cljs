@@ -1,5 +1,6 @@
 (ns com.pojtinger.felicitas.cljs-kitchen-sink.pages
-  (:require [com.pojtinger.felicitas.cljs-kitchen-sink.const :as const]
+  (:require [clojure.pprint :as pprint]
+            [com.pojtinger.felicitas.cljs-kitchen-sink.const :as const]
             [reagent.core :as r])
   (:require-macros [com.pojtinger.felicitas.cljs-kitchen-sink.macros :refer [text-input-output-component]]))
 
@@ -42,3 +43,31 @@
         [:button
          {:on-click #(swap! name (fn [prev] (if (= prev "Human") "Animal" "Human")))}
          (if (= @name "Human") "Disable" "Enable")]]])))
+
+(defn collections []
+  (let [list-value (r/atom '("Existing"))
+        vector-value (r/atom ["Existing"])]
+    (fn []
+      [:<>
+       [:section#lists
+        [:h2 "Lists"]
+        [:button
+         {:on-click #(swap! list-value (fn [prev]
+                                         (conj prev "Prepended")))}
+         "Prepend"]
+        [:pre {:style {:margin-top "1rem"}} [:code (with-out-str (pprint/write @list-value))]]]
+       [:section#vectors
+        [:h2 "Vectors"]
+        [:button
+         {:on-click #(swap! vector-value (fn [prev]
+                                           (conj prev "Appended")))}
+         "Append"]
+        [:button
+         {:on-click #(if (> (count @vector-value) 0) (swap! vector-value pop) nil)}
+         "Pop"]
+        [:h3 "All"]
+        [:pre {:style {:margin-top "1rem"}} [:code (with-out-str (pprint/write @vector-value))]]
+        [:h3 "First"]
+        [:pre {:style {:margin-top "1rem"}} [:code (with-out-str (pprint/write (first @vector-value)))]]
+        [:h3 "3rd"]
+        [:pre {:style {:margin-top "1rem"}} [:code (with-out-str (pprint/write (if (> (count @vector-value) 3) (nth @vector-value 3) nil)))]]]])))
