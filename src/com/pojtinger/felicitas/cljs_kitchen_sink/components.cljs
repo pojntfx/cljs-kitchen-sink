@@ -1,11 +1,10 @@
-(ns com.pojtinger.felicitas.cljs-kitchen-sink.components)
+(ns com.pojtinger.felicitas.cljs-kitchen-sink.components
+  (:require [com.pojtinger.felicitas.cljs-kitchen-sink.routes :as routes]))
 
 (defn navigation [path set-path]
   [:select {:value path
             :on-change #(set-path (keyword (-> % .-target .-value)))}
-   [:option {:value :home} "Home"]
-   [:option {:value :variables} "Variables"]
-   [:option {:value :decisions} "Decisions"]])
+   (map-indexed #(vector :option {:value (get (second %2) :name) :key %} (get (second %2) :title)) routes/routes)])
 
 (defn wrapper [path set-path child source]
   [:<>
