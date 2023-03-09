@@ -71,3 +71,17 @@
         [:pre {:style {:margin-top "1rem"}} [:code (with-out-str (pprint/write (first @vector-value)))]]
         [:h3 "3rd"]
         [:pre {:style {:margin-top "1rem"}} [:code (with-out-str (pprint/write (if (> (count @vector-value) 3) (nth @vector-value 3) nil)))]]]])))
+
+(defn exceptions []
+  (let [armed (r/atom false)]
+    (fn []
+      [:<>
+       [:section#exceptions
+        [:h2 "Try/Catch"]
+        [:label {:for "armed-input"} "Armed: "]
+        [:input
+         {:id "armed-input"
+          :type "checkbox"
+          :on-click #(swap! armed not)}]
+        [:br]
+        (try () (if (true? @armed) (throw "Errored") [:span "No error"]) (catch :default e [:span {:style {:color "red"}} (str e)]))]])))

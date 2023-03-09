@@ -17,4 +17,8 @@
              ["/collections" {:title "Collections"
                               :name :collections
                               :view pages/collections
-                              :source (with-out-str (source pages/collections))}]])
+                              :source (with-out-str (source pages/collections))}]
+             ["exceptions" {:title "Exceptions"
+                            :name :exceptions
+                            :view pages/exceptions
+                            :source (with-out-str (source pages/exceptions))}]])
