@@ -15,7 +15,7 @@ build: $(addprefix build/,$(obj))
 
 $(addprefix build/,$(obj)):
 	mkdir -p $(OUTPUT_DIR)
-	npx shadow-cljs compile app
+	npx shadow-cljs release app
 	tar czvf $(OUTPUT_DIR)/$(subst build/,,$@).tar.gz -C public .
 
 # Install
@@ -46,3 +46,4 @@ clean:
 # Dependencies
 depend:
 	npm i
+	curl -Lo public/vendor.css 'https://raw.githubusercontent.com/oxalorg/sakura/master/css/sakura-earthly.css'
