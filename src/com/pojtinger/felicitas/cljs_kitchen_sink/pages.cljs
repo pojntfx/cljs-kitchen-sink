@@ -5,7 +5,8 @@
 
 (defn home []
   [:section#intro
-   [:p [:strong "Welcome to the ClojureScript Kitchen Sink!"]]
+   [:h2 "👋 Hey!"]
+   [:p [:strong "Welcome to the ClojureScript Kitchen Sink."]]
    [:p "Check out the source code (© 2023 AGPL-3.0 Felicitas Pojtinger): " [:a {:href const/source-code :target "_blank"} "GitHub"]]])
 
 (defn not-found []

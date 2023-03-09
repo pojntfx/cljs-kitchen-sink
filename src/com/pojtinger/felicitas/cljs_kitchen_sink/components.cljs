@@ -9,11 +9,10 @@
 (defn wrapper [path set-path child source]
   [:<>
    [:header
+    [:h1 "ClojureScript Kitchen Sink"]
     [:nav
-     [:h1 "ClojureScript Kitchen Sink"]
-     [:div
-      [:span "Select demo: "]
-      [navigation path set-path]]]]
+     [:span "Select demo: "]
+     [navigation path set-path]]]
    [:main child]
    [:footer
     [:details

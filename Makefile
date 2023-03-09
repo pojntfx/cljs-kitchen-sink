@@ -46,4 +46,4 @@ clean:
 # Dependencies
 depend:
 	npm i
-	curl -Lo public/vendor.css 'https://raw.githubusercontent.com/oxalorg/sakura/master/css/sakura-earthly.css'
+	curl -Lo public/vendor.css 'https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css'
