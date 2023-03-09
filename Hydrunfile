@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -ex
+
+# Frontend
+if [ "$1" = "pwa" ]; then
+    # Generate dependencies
+    make depend
+
+    # Build
+    make build/cljs-kitchen-sink
+
+    exit 0
+fi
