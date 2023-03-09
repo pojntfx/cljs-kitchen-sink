@@ -4,6 +4,10 @@ set -ex
 
 # Frontend
 if [ "$1" = "pwa" ]; then
+    # Install native dependencies
+    apt update
+    apt install -y default-jdk
+
     # Generate dependencies
     make depend
 
