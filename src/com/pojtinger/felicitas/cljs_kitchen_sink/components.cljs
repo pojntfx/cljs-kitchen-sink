@@ -9,12 +9,14 @@
 
 (defn wrapper [path set-path child source]
   [:<>
-   [:h1 "ClojureScript Kitchen Sink"]
-   [:nav
-    [:span "Select demo: "]
-    [navigation path set-path]]
+   [:header
+    [:nav
+     [:h1 "ClojureScript Kitchen Sink"]
+     [:div
+      [:span "Select demo: "]
+      [navigation path set-path]]]]
    [:main child]
-   [:footer {:style {:margin-top "1rem"}}
+   [:footer
     [:details
      [:summary "Source code"]
-     [:code [:pre {:style {:overflow-x "auto"}} source]]]]])
+     [:pre [:code source]]]]])
