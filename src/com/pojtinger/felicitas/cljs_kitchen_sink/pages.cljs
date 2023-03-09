@@ -126,3 +126,36 @@
           :on-click #(swap! armed not)}]
         [:br]
         (try () (if (true? @armed) (throw "Errored") [:span "No error"]) (catch :default e [:span {:style {:color "red"}} (str e)]))]])))
+
+(defn maybe [value]
+  (if (nil? value) nil {:value value}))
+
+(defn maybe-divide [a b]
+  (println a b)
+  (if (zero? b) nil (maybe (/ (:value a) b))))
+
+(defn monads []
+  (let [start (r/atom 100)
+        divisor (r/atom 2)]
+    (fn []
+      [:<>
+       [:section#division
+        [:h2 "Division"]
+        [:label {:for "start-value"} "Value to start with: "]
+        [:input {:id "start-value"
+                 :placeholder "100"
+                 :type "number"
+                 :required true
+                 :value @start
+                 :on-change #(reset! start (js/parseInt (-> % .-target .-value)))}]
+        [:br]
+        [:label {:for "divisor-value"} "Divisor: "]
+        [:input {:id "divisor-value"
+                 :placeholder "5"
+                 :type "number"
+                 :required true
+                 :value @divisor
+                 :on-change #(reset! divisor (js/parseInt (-> % .-target .-value)))}]
+        [:pre {:style {:margin-top "1rem"}} [:code (with-out-str (pprint/write (-> (maybe @start)
+                                                                                   (maybe-divide 2)
+                                                                                   (maybe-divide @divisor))))]]]])))

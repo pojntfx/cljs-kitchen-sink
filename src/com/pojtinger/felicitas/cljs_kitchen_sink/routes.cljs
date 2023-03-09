@@ -21,4 +21,8 @@
              ["exceptions" {:title "Exceptions"
                             :name :exceptions
                             :view pages/exceptions
-                            :source (with-out-str (source pages/exceptions))}]])
+                            :source (with-out-str (source pages/exceptions))}]
+             ["monads" {:title "Monads"
+                        :name :monads
+                        :view pages/monads
+                        :source (with-out-str [(source pages/maybe) (source pages/maybe-divide) (source pages/monads)])}]])
