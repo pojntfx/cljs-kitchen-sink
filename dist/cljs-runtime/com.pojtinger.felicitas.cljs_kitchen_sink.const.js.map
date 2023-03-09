@@ -1,0 +1,1 @@
+{"version":3,"sources":["com/pojtinger/felicitas/cljs_kitchen_sink/const.cljs"],"mappings":";AAEA,+DAAA,/DAAKA","names":["com.pojtinger.felicitas.cljs-kitchen-sink.const/source-code"],"sourcesContent":["(ns com.pojtinger.felicitas.cljs-kitchen-sink.const)\n\n(def source-code \"https://github.com/pojntfx/cljs-kitchen-sink\")"]}
