@@ -20,8 +20,8 @@ reagent.core.is_client = reagent.impl.util.is_client;
  *   ```
  */
 reagent.core.create_element = (function reagent$core$create_element(var_args){
-var G__9439 = arguments.length;
-switch (G__9439) {
+var G__9410 = arguments.length;
+switch (G__9410) {
 case 1:
 return reagent.core.create_element.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -88,15 +88,15 @@ return cljs.core.apply.cljs$core$IFn$_invoke$arity$5(module$node_modules$react$i
 }));
 
 /** @this {Function} */
-(reagent.core.create_element.cljs$lang$applyTo = (function (seq9435){
-var G__9436 = cljs.core.first(seq9435);
-var seq9435__$1 = cljs.core.next(seq9435);
-var G__9437 = cljs.core.first(seq9435__$1);
-var seq9435__$2 = cljs.core.next(seq9435__$1);
-var G__9438 = cljs.core.first(seq9435__$2);
-var seq9435__$3 = cljs.core.next(seq9435__$2);
+(reagent.core.create_element.cljs$lang$applyTo = (function (seq9406){
+var G__9407 = cljs.core.first(seq9406);
+var seq9406__$1 = cljs.core.next(seq9406);
+var G__9408 = cljs.core.first(seq9406__$1);
+var seq9406__$2 = cljs.core.next(seq9406__$1);
+var G__9409 = cljs.core.first(seq9406__$2);
+var seq9406__$3 = cljs.core.next(seq9406__$2);
 var self__5754__auto__ = this;
-return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__9436,G__9437,G__9438,seq9435__$3);
+return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__9407,G__9408,G__9409,seq9406__$3);
 }));
 
 (reagent.core.create_element.cljs$lang$maxFixedArity = (3));
@@ -106,8 +106,8 @@ return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__9436,G__9437,G
  *   unchanged if it is not a vector.
  */
 reagent.core.as_element = (function reagent$core$as_element(var_args){
-var G__9441 = arguments.length;
-switch (G__9441) {
+var G__9413 = arguments.length;
+switch (G__9413) {
 case 1:
 return reagent.core.as_element.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -150,8 +150,8 @@ return reagent.impl.template.adapt_react_class(c);
  *   the component, converted to a map.
  */
 reagent.core.reactify_component = (function reagent$core$reactify_component(var_args){
-var G__9443 = arguments.length;
-switch (G__9443) {
+var G__9416 = arguments.length;
+switch (G__9416) {
 case 1:
 return reagent.core.reactify_component.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -223,8 +223,8 @@ return reagent.impl.component.reactify_component(c,compiler);
  *   React built-in static methods or properties are automatically defined as statics.
  */
 reagent.core.create_class = (function reagent$core$create_class(var_args){
-var G__9445 = arguments.length;
-switch (G__9445) {
+var G__9420 = arguments.length;
+switch (G__9420) {
 case 1:
 return reagent.core.create_class.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -320,8 +320,8 @@ return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(reagent.core.state_ato
  *   re-rendered, even is their arguments have not changed.
  */
 reagent.core.force_update = (function reagent$core$force_update(var_args){
-var G__9447 = arguments.length;
-switch (G__9447) {
+var G__9428 = arguments.length;
+switch (G__9428) {
 case 1:
 return reagent.core.force_update.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -392,8 +392,8 @@ return reagent.impl.component.get_argv(this$);
  *   - Collections of previous types
  */
 reagent.core.class_names = (function reagent$core$class_names(var_args){
-var G__9452 = arguments.length;
-switch (G__9452) {
+var G__9447 = arguments.length;
+switch (G__9447) {
 case 0:
 return reagent.core.class_names.cljs$core$IFn$_invoke$arity$0();
 
@@ -445,13 +445,13 @@ return cljs.core.apply.cljs$core$IFn$_invoke$arity$4(reagent.impl.util.class_nam
 }));
 
 /** @this {Function} */
-(reagent.core.class_names.cljs$lang$applyTo = (function (seq9449){
-var G__9450 = cljs.core.first(seq9449);
-var seq9449__$1 = cljs.core.next(seq9449);
-var G__9451 = cljs.core.first(seq9449__$1);
-var seq9449__$2 = cljs.core.next(seq9449__$1);
+(reagent.core.class_names.cljs$lang$applyTo = (function (seq9444){
+var G__9445 = cljs.core.first(seq9444);
+var seq9444__$1 = cljs.core.next(seq9444);
+var G__9446 = cljs.core.first(seq9444__$1);
+var seq9444__$2 = cljs.core.next(seq9444__$1);
 var self__5754__auto__ = this;
-return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__9450,G__9451,seq9449__$2);
+return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__9445,G__9446,seq9444__$2);
 }));
 
 (reagent.core.class_names.cljs$lang$maxFixedArity = (2));
@@ -463,8 +463,8 @@ return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__9450,G__9451,s
  *   merging is done.
  */
 reagent.core.merge_props = (function reagent$core$merge_props(var_args){
-var G__9457 = arguments.length;
-switch (G__9457) {
+var G__9455 = arguments.length;
+switch (G__9455) {
 case 0:
 return reagent.core.merge_props.cljs$core$IFn$_invoke$arity$0();
 
@@ -516,13 +516,13 @@ return cljs.core.apply.cljs$core$IFn$_invoke$arity$4(reagent.impl.util.merge_pro
 }));
 
 /** @this {Function} */
-(reagent.core.merge_props.cljs$lang$applyTo = (function (seq9454){
-var G__9455 = cljs.core.first(seq9454);
-var seq9454__$1 = cljs.core.next(seq9454);
-var G__9456 = cljs.core.first(seq9454__$1);
-var seq9454__$2 = cljs.core.next(seq9454__$1);
+(reagent.core.merge_props.cljs$lang$applyTo = (function (seq9452){
+var G__9453 = cljs.core.first(seq9452);
+var seq9452__$1 = cljs.core.next(seq9452);
+var G__9454 = cljs.core.first(seq9452__$1);
+var seq9452__$2 = cljs.core.next(seq9452__$1);
 var self__5754__auto__ = this;
-return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__9455,G__9456,seq9454__$2);
+return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__9453,G__9454,seq9452__$2);
 }));
 
 (reagent.core.merge_props.cljs$lang$maxFixedArity = (2));
