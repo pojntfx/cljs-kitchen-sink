@@ -3,12 +3,13 @@
             [reagent.core :as r])
   (:require-macros [com.pojtinger.felicitas.cljs-kitchen-sink.macros :refer [text-input-output-component]]))
 
-
-
 (defn home []
   [:section#intro
    [:p [:strong "Welcome to the ClojureScript Kitchen Sink!"]]
    [:p "Check out the source code (© 2023 AGPL-3.0 Felicitas Pojtinger): " [:a {:href const/source-code :target "_blank"} "GitHub"]]])
+
+(defn not-found []
+  [:h2 "404 not found"])
 
 (def global-initial-value "Global initial value")
 
@@ -38,5 +39,5 @@
        [:section#expressions
         [:h2 "Expressions"]
         [:button
-         {:on-click #(swap! name (fn [prev] [(if (= prev "Human") "Animal" "Human")]))}
+         {:on-click #(swap! name (fn [prev] (if (= prev "Human") "Animal" "Human")))}
          (if (= @name "Human") "Disable" "Enable")]]])))

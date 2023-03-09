@@ -1,6 +1,4 @@
-(ns com.pojtinger.felicitas.cljs-kitchen-sink.components
-  (:require [com.pojtinger.felicitas.cljs-kitchen-sink.pages :as pages]
-            [reagent.core :as r]))
+(ns com.pojtinger.felicitas.cljs-kitchen-sink.components)
 
 (defn navigation [path set-path]
   [:select {:value path
@@ -9,16 +7,10 @@
    [:option {:value :variables} "Variables"]
    [:option {:value :decisions} "Decisions"]])
 
-(defn index []
-  (let [path (r/atom :home)]
-    (fn [] [:<>
-            [:h1 "ClojureScript Kitchen Sink"]
-            [:nav
-             [:span "Select demo: "]
-             [navigation @path #(reset! path %)]]
-            [:main
-             (case @path
-               :home [pages/home]
-               :variables [pages/variables]
-               :decisions [pages/decisions]
-               [:h2 "404 Not Found"])]])))
+(defn wrapper [path set-path child]
+  [:<>
+   [:h1 "ClojureScript Kitchen Sink"]
+   [:nav
+    [:span "Select demo: "]
+    [navigation path set-path]]
+   [:main child]])
