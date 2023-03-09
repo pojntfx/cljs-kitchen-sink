@@ -11,8 +11,9 @@
    [:header
     [:h1 "ClojureScript Kitchen Sink"]
     [:nav
-     [:span "Select demo: "]
-     [navigation path set-path]]]
+     [:div {:style {:padding-top "2rem"}}
+      [:span "Select demo: "]
+      [navigation path set-path]]]]
    [:main child]
    [:footer
     [:details
