@@ -7,10 +7,14 @@
    [:option {:value :variables} "Variables"]
    [:option {:value :decisions} "Decisions"]])
 
-(defn wrapper [path set-path child]
+(defn wrapper [path set-path child source]
   [:<>
    [:h1 "ClojureScript Kitchen Sink"]
    [:nav
     [:span "Select demo: "]
     [navigation path set-path]]
-   [:main child]])
+   [:main child]
+   [:footer {:style {:margin-top "1rem"}}
+    [:details
+     [:summary "Source code"]
+     [:code [:pre {:style {:overflow-x "auto"}} source]]]]])

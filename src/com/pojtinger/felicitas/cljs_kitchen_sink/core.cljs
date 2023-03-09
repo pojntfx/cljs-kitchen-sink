@@ -17,4 +17,5 @@
      #(reset! match %)
      {:use-fragment true})
     (client/render root [(fn [] [wrapper (get-in @match [:data :name]) #(rfe/push-state %)
-                                 (if @match [(get-in @match [:data :view])] [pages/not-found])])])))
+                                 (if @match [(get-in @match [:data :view])] [pages/not-found])
+                                 (if @match (get-in @match [:data :source]) "")])])))
