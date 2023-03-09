@@ -46,7 +46,10 @@
 
 (defn collections []
   (let [list-value (r/atom '("Existing"))
-        vector-value (r/atom ["Existing"])]
+        vector-value (r/atom ["Existing"])
+        map-value (r/atom {})
+        new-set-value (r/atom "")
+        set-value (r/atom #{})]
     (fn []
       [:<>
        [:section#lists
@@ -70,7 +73,45 @@
         [:h3 "First"]
         [:pre {:style {:margin-top "1rem"}} [:code (with-out-str (pprint/write (first @vector-value)))]]
         [:h3 "3rd"]
-        [:pre {:style {:margin-top "1rem"}} [:code (with-out-str (pprint/write (if (> (count @vector-value) 3) (nth @vector-value 3) nil)))]]]])))
+        [:pre {:style {:margin-top "1rem"}} [:code (with-out-str (pprint/write (if (> (count @vector-value) 3) (nth @vector-value 3) nil)))]]]
+       [:section#lists
+        [:h2 "Maps"]
+        [:button
+         {:on-click #(swap! map-value (fn [prev]
+                                        (assoc prev :a 1)))}
+         "Assoc :a"]
+        [:button
+         {:on-click #(swap! map-value (fn [prev]
+                                        (dissoc prev :a)))}
+         "Dissoc :a"]
+        [:button
+         {:on-click #(swap! map-value (fn [prev]
+                                        (assoc prev :b 1)))}
+         "Assoc :b"]
+        [:button
+         {:on-click #(swap! map-value (fn [prev]
+                                        (dissoc prev :b)))}
+         "Dissoc :b"]
+        [:pre {:style {:margin-top "1rem"}} [:code (with-out-str (pprint/write @map-value))]]]
+       [:section#sets
+        [:h2 "Sets"]
+        [:label {:for "new-set-value"} "Value to add to set: "]
+        [:input {:id "new-set-value"
+                 :placeholder "New value"
+                 :type "text"
+                 :required true
+                 :value @new-set-value
+                 :on-change #(reset! new-set-value (-> % .-target .-value))
+                 :on-key-down #(swap! set-value (fn [prev]
+                                                  (let [new-value (conj prev @new-set-value)]
+                                                    (if (= (-> % .-key) "Enter") (do
+                                                                                   (reset! new-set-value "")
+                                                                                   new-value) prev))))}]
+        [:br]
+        [:button
+         {:on-click #(reset! set-value #{})}
+         "Clear set"]
+        [:pre {:style {:margin-top "1rem"}} [:code (with-out-str (pprint/write @set-value))]]]])))
 
 (defn exceptions []
   (let [armed (r/atom false)]
